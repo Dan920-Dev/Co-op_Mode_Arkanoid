@@ -1,0 +1,9 @@
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe.config
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.pdb
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csprojAssemblyReference.cache
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Form1.resources
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Properties.Resources.resources
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.GenerateResource.cache
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe
+C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto final\Co-op_Mode_Arkanoid\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.pdb
