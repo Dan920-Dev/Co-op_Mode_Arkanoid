@@ -52,12 +52,16 @@ namespace Arkanoid_Game
             {
                 xSpeed = -(xSpeed + 5);
             }
-            else if ((uniqueBallLocation.X > pbShipLocation.X &&
-                     uniqueBallLocation.X < pbShipLocation.X + pbShip.Width) &&
-                     uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))
+            else if (((uniqueBallLocation.X >= pbShipLocation.X &&
+                     uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width) &&
+                     uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))||(uniqueBallLocation.X +
+                UniqueBall.Width >= pbShipLocation.X && uniqueBallLocation.X + 
+                 UniqueBall.Width<= pbShipLocation.X + pbShip.Width)&& uniqueBallLocation.Y >= 
+                (pbShipLocation.Y - pbShip.Height))
             {
                 tSpeed = -(tSpeed + 5);
             }
+            
             
             uniqueBallLocation.Y -= tSpeed;
             uniqueBallLocation.X += xSpeed;

@@ -55,9 +55,11 @@
             // pbShip
             // 
             this.pbShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbShip.Image = global::Arkanoid_Game.Properties.Resources.NaveArkanoid;
             this.pbShip.Location = new System.Drawing.Point(425, 362);
             this.pbShip.Name = "pbShip";
             this.pbShip.Size = new System.Drawing.Size(98, 24);
+            this.pbShip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbShip.TabIndex = 1;
             this.pbShip.TabStop = false;
             // 
