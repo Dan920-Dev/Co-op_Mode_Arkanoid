@@ -24,24 +24,24 @@
 ## Definición formal
 El proyecto final de la materia consistirá en la recreación de un juego clásico, **Arkanoid**. Para las personas que nunca lo han jugado o escuchado, acá un breve video.
 
-[![Video](./ Proyecto Final POO/Res/fake.png)](https://www.youtube.com/watch?v=3luUb7WEm7k&feature=emb_logo)
+[![Video](./Res/fake.png)](https://www.youtube.com/watch?v=3luUb7WEm7k&feature=emb_logo)
 
 Se pretende que el juego sea totalmente funcional, y que conste de un único nivel a su creatividad. El programa como tal deberá contener los siguientes aspectos:
 
 ### Menú principal
-![Menú](./Proyecto Final POO/Res/menu.png)
+![Menú](./Res/menu.png)
 Deberá contener las siguientes opciones:
 
 **Jugar**<br>
 Deberá solicitar un nombre de jugador a través de una pequeña ventana o cambio de panel dentro de la principal. El nombre del jugador deberá ir a buscar su existencia en una **BD**, en caso no exista deberá agregarse.
 
-![Jugador](./Proyecto Final POO/Res/usuario.png)
+![Jugador](./Res/usuario.png)
 
 **Puntajes**<br>
 Se mostrará una ventana externa conteniendo un **Top 10** mejores puntajes, mostrando el nombre del jugador/usuario y el puntaje obtenido.
 
 
-![Top](./Proyecto Final POO/Res/Top.png)
+![Top](./Res/Top.png)
 
 
 ### Jugabilidad
@@ -51,7 +51,7 @@ a utilizar, la disposición de los cuadros en pantalla, la movilidad si será co
 
 Los aspectos que son **obligatorios** en la jugabilidad serán:
 
-![Top](./Proyecto Final POO/Res/Game.png)
+![Top](./Res/Game.png)
 
 * Un sistema de vidas<br>
 Que el jugador inicie con una cantidad **n** y  a medida falle disminuyan hasta perder el juego.
@@ -91,13 +91,13 @@ En cuanto a requerimientos metodológicos, es necesaria la buena comunicación y
 Se evaluará la utilización de herramientas de planificación, como tableros u organigramas. La herramientra propuesta para la materia es 
 [Trello](https://trello.com/). 
 
-![Tablero](./Proyecto Final POO/Res/t.png) 
+![Tablero](./Res/t.png) 
 
 Trello consiste en la implemetación de un tablero, que contiene listas, y a su vez estas listas contienen tarjetas con información escrita por los miembros.
 
 Se pretende que las listas estén categorizadas, por importancia, tipo de actividad, etc.
 
-![Tarjetas](./Proyecto Final POO/Res/card.png) 
+![Tarjetas](./Res/card.png) 
 
 Las tarjetas dentro de las listas corresponden a actividades, y pueden ser personalizadas, agregando fechas límites, marcarlas con etiquetas, agregar miembros a la actividad, checklists, etc.
 
