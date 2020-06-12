@@ -24,7 +24,7 @@
 ## Definición formal
 El proyecto final de la materia consistirá en la recreación de un juego clásico, **Arkanoid**. Para las personas que nunca lo han jugado o escuchado, acá un breve video.
 
-[![Video](./Proyecto Final POO/Res/fake.png)](https://www.youtube.com/watch?v=3luUb7WEm7k&feature=emb_logo)
+[![Video](.Proyecto Final POO/Res/fake.png)](https://www.youtube.com/watch?v=3luUb7WEm7k&feature=emb_logo)
 
 Se pretende que el juego sea totalmente funcional, y que conste de un único nivel a su creatividad. El programa como tal deberá contener los siguientes aspectos:
 
