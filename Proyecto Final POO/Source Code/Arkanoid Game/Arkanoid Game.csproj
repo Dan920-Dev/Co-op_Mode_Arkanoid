@@ -72,7 +72,6 @@
     <Compile Include="Scores.Designer.cs">
       <DependentUpon>Scores.cs</DependentUpon>
     </Compile>
-    <Compile Include="SetGame.cs" />
     <Compile Include="Ship.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

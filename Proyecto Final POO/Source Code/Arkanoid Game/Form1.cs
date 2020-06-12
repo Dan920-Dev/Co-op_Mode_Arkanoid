@@ -34,11 +34,10 @@ namespace Arkanoid_Game
             if (UniqueBall.Bottom > ClientSize.Height)
             {
                 timer1.Enabled = false;
-                flag = true;
+                
                 reset = true;
                 tSpeed = 10;
                 xSpeed = 10;
-
             }
             else if (UniqueBall.Top <= 0)
             {
@@ -56,13 +55,12 @@ namespace Arkanoid_Game
             else if (((uniqueBallLocation.X >= pbShipLocation.X &&
                      uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width) &&
                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))||(uniqueBallLocation.X +
-                UniqueBall.Width >= pbShipLocation.X && uniqueBallLocation.X + 
-                 UniqueBall.Width<= pbShipLocation.X + pbShip.Width)&& uniqueBallLocation.Y >= 
-                (pbShipLocation.Y - pbShip.Height))
+                     UniqueBall.Width >= pbShipLocation.X && uniqueBallLocation.X + 
+                     UniqueBall.Width<= pbShipLocation.X + pbShip.Width)&& uniqueBallLocation.Y >= 
+                     (pbShipLocation.Y - pbShip.Height))
             {
                 tSpeed = -(tSpeed + 5);
             }
-            
             
             uniqueBallLocation.Y -= tSpeed;
             uniqueBallLocation.X += xSpeed;
@@ -104,11 +102,11 @@ namespace Arkanoid_Game
 
             if (e.KeyCode == Keys.Enter && reset)
             {
-                Form form1 = new Form1();
                 reset = false;
+                flag = true;
                 
                 ballLocation.Y = pbShipLocation.Y - UniqueBall.Height;
-                SetGame.SetScreen(form1, pbShip, UniqueBall);
+                SetScreen(pbShip, UniqueBall);
             }
             
             if (flag)
@@ -120,13 +118,12 @@ namespace Arkanoid_Game
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            Form form1 = new Form1();
-            SetGame.SetScreen(form1, pbShip, UniqueBall);
+            SetScreen(pbShip, UniqueBall);
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space && !reset)
             {
                 flag = false;
                 timer1.Interval = (100);
@@ -138,6 +135,18 @@ namespace Arkanoid_Game
         {
             Form window = new FrmMenu();
             window.Show();
+        }
+        
+        private void SetScreen(PictureBox pbShip, PictureBox UniqueBall)
+        {
+            var pbShipLocation = pbShip.Location;
+            pbShipLocation.X = Width / 2 - pbShip.Width / 2;
+            pbShipLocation.Y = Height - 150;
+            pbShip.Location = pbShipLocation;
+            var uniqueBallLocation = UniqueBall.Location;
+            uniqueBallLocation.X = Width / 2 - UniqueBall.Width / 2;
+            uniqueBallLocation.Y = pbShipLocation.Y - UniqueBall.Height;
+            UniqueBall.Location = uniqueBallLocation;
         }
     }
 }

@@ -33,7 +33,6 @@
       <e p="Scores.cs" t="Include" />
       <e p="Scores.Designer.cs" t="Include" />
       <e p="Scores.resx" t="Include" />
-      <e p="SetGame.cs" t="Include" />
       <e p="Ship.cs" t="Include" />
     </e>
   </component>
