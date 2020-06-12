@@ -14,24 +14,6 @@ namespace Arkanoid_Game
             mainMenu = new Menu();
             topScores = new Scores();
         }
-        
-        private void FrmMenu_Load(object sender, EventArgs e)
-        {
-            mainMenu.Dock = DockStyle.Fill;
-            mainMenu.Width = ClientSize.Width;
-            mainMenu.Height = ClientSize.Height;
-            
-            topScores.Dock = DockStyle.Fill;
-            topScores.Width = ClientSize.Width;
-            topScores.Height = ClientSize.Height;
-            
-            Controls.Add(mainMenu);
-            Controls.Add(topScores);
-
-            mainMenu.MenuButtonCLick += StartGame;
-            mainMenu.MenuButtonCLick += OnClickToMenuUS;
-            topScores.ScoresButtonCLick += OnClickToScoresUS;
-        }
 
         private void OnClickToMenuUS(object sender, EventArgs e)
         {
@@ -49,7 +31,34 @@ namespace Arkanoid_Game
         {
             Form window = new Form1();
             window.Show();
-            this.Hide();
+            Hide();
+        }
+        
+        private void ExitGame(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            #region Configurando User Controls
+            mainMenu.Dock = DockStyle.Fill;
+            mainMenu.Width = ClientSize.Width;
+            mainMenu.Height = ClientSize.Height;
+            
+            topScores.Dock = DockStyle.Fill;
+            topScores.Width = ClientSize.Width;
+            topScores.Height = ClientSize.Height;
+            
+            Controls.Add(mainMenu);
+            Controls.Add(topScores);
+            #endregion
+
+            //Agregando Events
+            mainMenu.MenuButtonCLick += StartGame;
+            mainMenu.ShowScoresClick += OnClickToMenuUS;
+            mainMenu.ExitGameClick += ExitGame;
+            topScores.ScoresButtonCLick += OnClickToScoresUS;
         }
     }
 }

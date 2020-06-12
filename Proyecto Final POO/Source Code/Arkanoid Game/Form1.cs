@@ -13,7 +13,7 @@ namespace Arkanoid_Game
     public partial class Form1 : Form
     {
         public int tSpeed, xSpeed;
-        public bool flag;
+        public bool flag, reset;
 
         public Form1()
         {
@@ -21,6 +21,7 @@ namespace Arkanoid_Game
             tSpeed = 10;
             xSpeed = 10;
             flag = true;
+            reset = false;
             timer1.Enabled = false;
         }
 
@@ -28,16 +29,16 @@ namespace Arkanoid_Game
         {
             var uniqueBallLocation = UniqueBall.Location;
             var pbShipLocation = pbShip.Location;
-            Form form1 = new Form1();
             //UniqueBall.Top += tSpeed;
 
             if (UniqueBall.Bottom > ClientSize.Height)
             {
                 timer1.Enabled = false;
                 flag = true;
-                //tSpeed = -(tSpeed + 5);
-                SetGame.SetScreen(form1, pbShip, UniqueBall);
-                
+                reset = true;
+                tSpeed = 10;
+                xSpeed = 10;
+
             }
             else if (UniqueBall.Top <= 0)
             {
@@ -101,6 +102,15 @@ namespace Arkanoid_Game
             
             pbShip.Location = pbShipLocation;
 
+            if (e.KeyCode == Keys.Enter && reset)
+            {
+                Form form1 = new Form1();
+                reset = false;
+                
+                ballLocation.Y = pbShipLocation.Y - UniqueBall.Height;
+                SetGame.SetScreen(form1, pbShip, UniqueBall);
+            }
+            
             if (flag)
             {
                 ballLocation.X = pbShipLocation.X + pbShip.Width/2 - UniqueBall.Width/2;
@@ -122,6 +132,12 @@ namespace Arkanoid_Game
                 timer1.Interval = (100);
                 timer1.Start();
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form window = new FrmMenu();
+            window.Show();
         }
     }
 }

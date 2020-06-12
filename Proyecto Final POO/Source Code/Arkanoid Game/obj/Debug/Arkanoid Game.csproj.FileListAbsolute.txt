@@ -36,3 +36,15 @@ C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Fi
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.CoreCompileInputs.cache
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.pdb
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csprojAssemblyReference.cache
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Form1.resources
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Properties.Resources.resources
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.GenerateResource.cache
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.pdb
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe.config
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.pdb
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Menu.resources
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Scores.resources
+C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.FrmMenu.resources
