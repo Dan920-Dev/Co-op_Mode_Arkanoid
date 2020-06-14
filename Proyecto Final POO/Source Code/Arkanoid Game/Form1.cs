@@ -14,6 +14,7 @@ namespace Arkanoid_Game
     {
         public int tSpeed, xSpeed;
         public bool flag, reset;
+        public PictureBox[,] blocks;
 
         public Form1()
         {
@@ -23,6 +24,116 @@ namespace Arkanoid_Game
             flag = true;
             reset = false;
             timer1.Enabled = false;
+            setBlock();
+            }
+
+        private void setBlock()
+        {
+            int bheight = 35;
+            int bwidth = 75;
+
+            blocks = new PictureBox[10, 18];
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 18; j++)
+                {
+                    blocks[i,j]=new PictureBox();
+                    blocks[i, j].Height = bheight;
+                    blocks[i, j].Width = bwidth;
+                    blocks[i, j].Top = bheight * i;
+                    blocks[i, j].Left = bwidth * j;
+                    if (i == 1 && (j==6 || j== 12)           )
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    } 
+                    if (i == 1 && ((j>=0&&j<6)||(j>6&&j<12)||(j>12&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    } 
+                    if (i == 0)
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if (i == 2&&(j==7||j==11))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                        
+                    }
+                    if (i == 2 && ((j>=0&&j<7)||(j>7&&j<11)||(j>11&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    } 
+                    if (i == 3&&(j>5&&j<13))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if (i == 3 && ((j>=0&&j<6)||(j>12&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    } 
+                    if (i == 4 && ((j>=0&&j<5)||(j>13&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    } 
+                    if (i == 4 &&(j==5||j==6||j==8||j==9||j==10||j==12||j==13))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if (i == 4 &&(j==7||j==11))
+                    {
+                        blocks[i, j].BackColor = Color.Red;
+                    }
+                    if (i == 5 && ((j>=0&&j<4)||(j>14&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if (i == 5 &&(j>3&&j<15))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if ((i == 6||i==7) &&(j==4||j==6||j==12||j==14))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if (i == 6 &&(j==8||j==10)){
+                        blocks[i, j].BackColor = Color.Red;
+                    }
+                    if (i == 6 &&(j==7||j==9||j==11))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if (i == 8 &&(j==7||j==8||j==10||j==11))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+                    if ((i == 6 || i==7)&& ((j>=0&&j<4)||(j>14&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if ((i == 6 || i==7) &&(j==5||j==13))
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if ((i == 7 )&& ((j>6&&j<12))){
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if ((i == 8 )&& ((j>=0&&j<7)||(j>11&&j<=17))){
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+                    if ((i == 8 )&& j==9){
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+
+                    if ((i == 9))
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+
+
+
+                    this.Controls.Add(blocks[i,j]);
+
+                }
+
+            }
+
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

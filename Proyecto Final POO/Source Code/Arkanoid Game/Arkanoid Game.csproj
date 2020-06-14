@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="blocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blocks.Designer.cs">
+      <DependentUpon>blocks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
       <DependentUpon>Scores.cs</DependentUpon>
     </Compile>
     <Compile Include="Ship.cs" />
+    <EmbeddedResource Include="blocks.resx">
+      <DependentUpon>blocks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\NaveArkanoid.png" />
+    <Content Include="Resources\Tile___black.png" />
+    <Content Include="Resources\Tile___blue.png" />
+    <Content Include="Resources\Tile___red.png" />
+    <Content Include="Resources\Tile___violet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
