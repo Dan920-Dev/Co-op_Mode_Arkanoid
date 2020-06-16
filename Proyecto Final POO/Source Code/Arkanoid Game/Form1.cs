@@ -19,13 +19,15 @@ namespace Arkanoid_Game
         public Form1()
         {
             InitializeComponent();
+            
             tSpeed = 10;
             xSpeed = 10;
             flag = true;
             reset = false;
             timer1.Enabled = false;
+            
             setBlock();
-            }
+        }
 
         private void setBlock()
         {
@@ -39,10 +41,11 @@ namespace Arkanoid_Game
                 for (int j = 0; j < 18; j++)
                 {
                     blocks[i,j]=new PictureBox();
-                    blocks[i, j].Height = bheight;
-                    blocks[i, j].Width = bwidth;
+                    blocks[i, j].Height = bheight - 2;
+                    blocks[i, j].Width = bwidth - 2;
                     blocks[i, j].Top = bheight * i;
-                    blocks[i, j].Left = bwidth * j;
+                    blocks[i, j].Left = bwidth * j ;
+                    
                     if (i == 1 && (j==6 || j== 12)           )
                     {
                         blocks[i, j].BackColor = Color.Green;
@@ -123,24 +126,15 @@ namespace Arkanoid_Game
                     {
                         blocks[i, j].BackColor = Color.Black;
                     }
-
-
-
-                    this.Controls.Add(blocks[i,j]);
-
+                    
+                    Controls.Add(blocks[i,j]);
                 }
-
             }
-
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             var uniqueBallLocation = UniqueBall.Location;
-            var pbShipLocation = pbShip.Location;
-            //UniqueBall.Top += tSpeed;
 
             if (UniqueBall.Bottom > ClientSize.Height)
             {
@@ -154,21 +148,16 @@ namespace Arkanoid_Game
             {
                 tSpeed = -(tSpeed + 5);
             }
-
-            else if (uniqueBallLocation.X <= 0)
+            else if (uniqueBallLocation.X < 0)
             {
+                uniqueBallLocation.X = 1;
                 xSpeed = -(xSpeed + 5);
             }
             else if (uniqueBallLocation.X  + UniqueBall.Width >= ClientSize.Width)
             {
                 xSpeed = -(xSpeed + 5);
             }
-            else if (((uniqueBallLocation.X >= pbShipLocation.X &&
-                     uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width) &&
-                     uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))||(uniqueBallLocation.X +
-                     UniqueBall.Width >= pbShipLocation.X && uniqueBallLocation.X + 
-                     UniqueBall.Width<= pbShipLocation.X + pbShip.Width)&& uniqueBallLocation.Y >= 
-                     (pbShipLocation.Y - pbShip.Height))
+            else if (UniqueBall.Bounds.IntersectsWith(pbShip.Bounds))
             {
                 tSpeed = -(tSpeed + 5);
             }
@@ -177,38 +166,45 @@ namespace Arkanoid_Game
             uniqueBallLocation.X += xSpeed;
 
             UniqueBall.Location = uniqueBallLocation;
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 18; j++)
+                {
+                    if (UniqueBall.Bounds.IntersectsWith(blocks[i,j].Bounds))
+                    {
+                        int k = 3000;
+
+                        blocks[i, j].Top = k;
+                        blocks[i, j].Left = k;
+                        Controls.Remove(blocks[i,j]);
+                        //blocks[i,j] = null;
+                        tSpeed = -(tSpeed + 5);
+                    }
+                }
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             var pbShipLocation = pbShip.Location;
             var ballLocation = UniqueBall.Location;
-            if (e.KeyCode == Keys.Left)
+            
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 if (pbShipLocation.X <= 5) {}
                 else
                     pbShipLocation.X -= 10;
             }
-            else if (e.KeyCode == Keys.A)
-            {
-                if (pbShipLocation.X <= 5) {}
-                else 
-                    pbShipLocation.X -= 10;
-            }
-            else if (e.KeyCode == Keys.Right)
+            
+            else if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 if (pbShipLocation.X + pbShip.Width > ClientSize.Width) {}
                     
                 else 
                     pbShipLocation.X += 10;
             }
-            else if (e.KeyCode == Keys.D)
-            {
-                if (pbShipLocation.X + pbShip.Width > ClientSize.Width){}
-                else 
-                    pbShipLocation.X += 10;
-            }
-            
+
             pbShip.Location = pbShipLocation;
 
             if (e.KeyCode == Keys.Enter && reset)
@@ -217,7 +213,7 @@ namespace Arkanoid_Game
                 flag = true;
                 
                 ballLocation.Y = pbShipLocation.Y - UniqueBall.Height;
-                SetScreen(pbShip, UniqueBall);
+                SetScreen();
             }
             
             if (flag)
@@ -225,21 +221,18 @@ namespace Arkanoid_Game
                 ballLocation.X = pbShipLocation.X + pbShip.Width/2 - UniqueBall.Width/2;
                 UniqueBall.Location = ballLocation;
             }
+            
+            if (e.KeyCode == Keys.Space && !reset)
+            {
+                flag = false;
+                timer1.Interval = (50);
+                timer1.Start();
+            }
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            SetScreen(pbShip, UniqueBall);
-        }
-
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Space && !reset)
-            {
-                flag = false;
-                timer1.Interval = (100);
-                timer1.Start();
-            }
+            SetScreen();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -248,7 +241,7 @@ namespace Arkanoid_Game
             window.Show();
         }
         
-        private void SetScreen(PictureBox pbShip, PictureBox UniqueBall)
+        private void SetScreen()
         {
             var pbShipLocation = pbShip.Location;
             pbShipLocation.X = Width / 2 - pbShip.Width / 2;

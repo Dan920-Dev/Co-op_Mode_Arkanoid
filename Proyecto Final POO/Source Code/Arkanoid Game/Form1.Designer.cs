@@ -83,7 +83,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize) (this.UniqueBall)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pbShip)).EndInit();
             this.ResumeLayout(false);
