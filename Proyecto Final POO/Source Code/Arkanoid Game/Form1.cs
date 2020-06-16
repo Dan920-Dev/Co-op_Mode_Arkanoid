@@ -157,20 +157,40 @@ namespace Arkanoid_Game
             {
                 xSpeed = -(xSpeed + 5);
             }
+<<<<<<< HEAD
             else if (UniqueBall.Bounds.IntersectsWith(pbShip.Bounds))
+=======
+            else if (((uniqueBallLocation.X >= pbShipLocation.X &&
+                       uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width) &&
+                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)) || (uniqueBallLocation.X +
+                                                                                      UniqueBall.Width >=
+                                                                                      pbShipLocation.X &&
+                                                                                      uniqueBallLocation.X +
+                                                                                      UniqueBall.Width <=
+                                                                                      pbShipLocation.X + pbShip.Width
+                ) && uniqueBallLocation.Y >=
+                (pbShipLocation.Y - pbShip.Height))
+>>>>>>> ec578c0d70902ad9296c4421f867e4c668758e03
             {
                 tSpeed = -(tSpeed + 5);
             }
             
+            
+
             uniqueBallLocation.Y -= tSpeed;
             uniqueBallLocation.X += xSpeed;
 
             UniqueBall.Location = uniqueBallLocation;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ec578c0d70902ad9296c4421f867e4c668758e03
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 18; j++)
                 {
+<<<<<<< HEAD
                     if (UniqueBall.Bounds.IntersectsWith(blocks[i,j].Bounds))
                     {
                         int k = 3000;
@@ -180,6 +200,12 @@ namespace Arkanoid_Game
                         Controls.Remove(blocks[i,j]);
                         //blocks[i,j] = null;
                         tSpeed = -(tSpeed + 5);
+=======
+                    if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds))
+                    { 
+                        Controls.Remove(blocks[i,j]); //blocks[i,j]=null;
+                    tSpeed = -(tSpeed + 5);
+>>>>>>> ec578c0d70902ad9296c4421f867e4c668758e03
                     }
                 }
             }
