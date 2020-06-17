@@ -12,7 +12,7 @@ namespace Arkanoid_Game
 {
     public partial class Form1 : Form
     {
-        public int tSpeed, xSpeed;
+        public int tSpeed, xSpeed,cont;
         public bool flag, reset;
         public PictureBox[,] blocks;
 
@@ -24,6 +24,7 @@ namespace Arkanoid_Game
             flag = true;
             reset = false;
             timer1.Enabled = false;
+            cont = 0;
             setBlock();
             }
 
@@ -31,6 +32,7 @@ namespace Arkanoid_Game
         {
             int bheight = 35;
             int bwidth = 75;
+         if(cont==0){   
 
             blocks = new PictureBox[10, 18];
 
@@ -38,84 +40,114 @@ namespace Arkanoid_Game
             {
                 for (int j = 0; j < 18; j++)
                 {
-                    blocks[i,j]=new PictureBox();
+                    blocks[i, j] = new PictureBox();
                     blocks[i, j].Height = bheight;
                     blocks[i, j].Width = bwidth;
                     blocks[i, j].Top = bheight * i;
                     blocks[i, j].Left = bwidth * j;
-                    if (i == 1 && (j==6 || j== 12)           )
+                    if (i == 1 && (j == 6 || j == 12))
                     {
                         blocks[i, j].BackColor = Color.Green;
-                    } 
-                    if (i == 1 && ((j>=0&&j<6)||(j>6&&j<12)||(j>12&&j<=17))){
+                    }
+
+                    if (i == 1 && ((j >= 0 && j < 6) || (j > 6 && j < 12) || (j > 12 && j <= 17)))
+                    {
                         blocks[i, j].BackColor = Color.Black;
-                    } 
+                    }
+
                     if (i == 0)
                     {
                         blocks[i, j].BackColor = Color.Black;
                     }
-                    if (i == 2&&(j==7||j==11))
+
+                    if (i == 2 && (j == 7 || j == 11))
                     {
                         blocks[i, j].BackColor = Color.Green;
-                        
+
                     }
-                    if (i == 2 && ((j>=0&&j<7)||(j>7&&j<11)||(j>11&&j<=17))){
-                        blocks[i, j].BackColor = Color.Black;
-                    } 
-                    if (i == 3&&(j>5&&j<13))
+
+                    if (i == 2 && ((j >= 0 && j < 7) || (j > 7 && j < 11) || (j > 11 && j <= 17)))
                     {
-                        blocks[i, j].BackColor = Color.Green;
+                        blocks[i, j].BackColor = Color.Black;
                     }
-                    if (i == 3 && ((j>=0&&j<6)||(j>12&&j<=17))){
-                        blocks[i, j].BackColor = Color.Black;
-                    } 
-                    if (i == 4 && ((j>=0&&j<5)||(j>13&&j<=17))){
-                        blocks[i, j].BackColor = Color.Black;
-                    } 
-                    if (i == 4 &&(j==5||j==6||j==8||j==9||j==10||j==12||j==13))
+
+                    if (i == 3 && (j > 5 && j < 13))
                     {
                         blocks[i, j].BackColor = Color.Green;
                     }
-                    if (i == 4 &&(j==7||j==11))
+
+                    if (i == 3 && ((j >= 0 && j < 6) || (j > 12 && j <= 17)))
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+
+                    if (i == 4 && ((j >= 0 && j < 5) || (j > 13 && j <= 17)))
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+
+                    if (i == 4 && (j == 5 || j == 6 || j == 8 || j == 9 || j == 10 || j == 12 || j == 13))
+                    {
+                        blocks[i, j].BackColor = Color.Green;
+                    }
+
+                    if (i == 4 && (j == 7 || j == 11))
                     {
                         blocks[i, j].BackColor = Color.Red;
                     }
-                    if (i == 5 && ((j>=0&&j<4)||(j>14&&j<=17))){
+
+                    if (i == 5 && ((j >= 0 && j < 4) || (j > 14 && j <= 17)))
+                    {
                         blocks[i, j].BackColor = Color.Black;
                     }
-                    if (i == 5 &&(j>3&&j<15))
+
+                    if (i == 5 && (j > 3 && j < 15))
                     {
                         blocks[i, j].BackColor = Color.Green;
                     }
-                    if ((i == 6||i==7) &&(j==4||j==6||j==12||j==14))
+
+                    if ((i == 6 || i == 7) && (j == 4 || j == 6 || j == 12 || j == 14))
                     {
                         blocks[i, j].BackColor = Color.Green;
                     }
-                    if (i == 6 &&(j==8||j==10)){
+
+                    if (i == 6 && (j == 8 || j == 10))
+                    {
                         blocks[i, j].BackColor = Color.Red;
                     }
-                    if (i == 6 &&(j==7||j==9||j==11))
+
+                    if (i == 6 && (j == 7 || j == 9 || j == 11))
                     {
                         blocks[i, j].BackColor = Color.Green;
                     }
-                    if (i == 8 &&(j==7||j==8||j==10||j==11))
+
+                    if (i == 8 && (j == 7 || j == 8 || j == 10 || j == 11))
                     {
                         blocks[i, j].BackColor = Color.Green;
                     }
-                    if ((i == 6 || i==7)&& ((j>=0&&j<4)||(j>14&&j<=17))){
-                        blocks[i, j].BackColor = Color.Black;
-                    }
-                    if ((i == 6 || i==7) &&(j==5||j==13))
+
+                    if ((i == 6 || i == 7) && ((j >= 0 && j < 4) || (j > 14 && j <= 17)))
                     {
                         blocks[i, j].BackColor = Color.Black;
                     }
-                    if ((i == 7 )&& ((j>6&&j<12))){
+
+                    if ((i == 6 || i == 7) && (j == 5 || j == 13))
+                    {
                         blocks[i, j].BackColor = Color.Black;
                     }
-                    if ((i == 8 )&& ((j>=0&&j<7)||(j>11&&j<=17))){
+
+                    if ((i == 7) && ((j > 6 && j < 12)))
+                    {
                         blocks[i, j].BackColor = Color.Black;
                     }
-                    if ((i == 8 )&& j==9){
+
+                    if ((i == 8) && ((j >= 0 && j < 7) || (j > 11 && j <= 17)))
+                    {
+                        blocks[i, j].BackColor = Color.Black;
+                    }
+
+                    if ((i == 8) && j == 9)
+                    {
                         blocks[i, j].BackColor = Color.Black;
                     }
 
@@ -124,13 +156,18 @@ namespace Arkanoid_Game
                         blocks[i, j].BackColor = Color.Black;
                     }
 
+                   
 
 
-                    this.Controls.Add(blocks[i,j]);
+
+                    this.Controls.Add(blocks[i, j]);
 
                 }
-
             }
+
+            cont++;
+
+         }
 
 
 
@@ -150,13 +187,14 @@ namespace Arkanoid_Game
                 tSpeed = 10;
                 xSpeed = 10;
             }
-            else if (UniqueBall.Top <= 0)
-            {
+            else if (UniqueBall.Top <=0)
+            { 
                 tSpeed = -(tSpeed + 5);
             }
 
             else if (uniqueBallLocation.X <= 0)
             {
+                uniqueBallLocation.X = 1;
                 xSpeed = -(xSpeed + 5);
             }
             else if (uniqueBallLocation.X  + UniqueBall.Width >= ClientSize.Width)
@@ -184,19 +222,184 @@ namespace Arkanoid_Game
 
             UniqueBall.Location = uniqueBallLocation;
 
-
+            
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 18; j++)
                 {
-                    if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds))
-                    { 
-                        Controls.Remove(blocks[i,j]); //blocks[i,j]=null;
-                    tSpeed = -(tSpeed + 5);
+                    int u = 1;
+
+
+                    if (j <= 15)
+                    {
+                        if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                             uniqueBallLocation.X + UniqueBall.Width <
+                             blocks[i, j + u].Location.X))
+                        {
+                            int k = 30000;
+
+                            blocks[i, j].Top = k;
+                            blocks[i, j].Left = k;
+                            Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                            tSpeed = -(tSpeed + 5);
+                        }
+
+
+
+                        if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                            (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
+                        {
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j].Top = k;
+                                blocks[i, j].Left = k;
+                                Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j + 1].Top = k;
+                                blocks[i, j + 1].Left = k;
+                                Controls.Remove(blocks[i, j + 1]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j].Top = k;
+                                blocks[i, j].Left = k;
+
+                                blocks[i, j + 1].Top = k;
+                                blocks[i, j + 1].Left = k;
+                                Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                                Controls.Remove(blocks[i, j + 1]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+                        }
+                    }
+
+                    if (j == 16)
+                    {
+                      
+                    
+                        if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                             uniqueBallLocation.X + UniqueBall.Width <
+                             blocks[i, j + u].Location.X))
+                        {
+                            int k = 30000;
+
+                            blocks[i, j].Top = k;
+                            blocks[i, j].Left = k;
+                            Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                            tSpeed = -(tSpeed + 5);
+                        }
+
+
+
+                        if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                            (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
+                        {
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j].Top = k;
+                                blocks[i, j].Left = k;
+                                Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j + 1].Top = k;
+                                blocks[i, j + 1].Left = k;
+                                Controls.Remove(blocks[i, j + 1]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+
+                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
+                            {
+                                int k = 30000;
+
+                                blocks[i, j].Top = k;
+                                blocks[i, j].Left = k;
+
+                                blocks[i, j + 1].Top = k;
+                                blocks[i, j + 1].Left = k;
+                                Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                                Controls.Remove(blocks[i, j + 1]); //blocks[i,j]=null;
+
+                                tSpeed = -(tSpeed + 5);
+                            }
+                        }
+                        
+                        
+                    }
+
+                    if (j == 17)
+                    {if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                          uniqueBallLocation.X>=blocks[i, j].Location.X
+                          ))
+                        {
+                            int k = 30000;
+
+                            blocks[i, j].Top = k;
+                            blocks[i, j].Left = k;
+                            Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                            tSpeed = -(tSpeed + 5);
+                        }
                     }
                 }
-            }
+
+                /*if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
+                    blocks[i, j].Location.X + blocks[i, j].Width) && (uniqueBallLocation.Y==blocks[i, j].Location.Y +
+                        blocks[i, j].Height )|| (uniqueBallLocation.X + UniqueBall.Width >=
+                                           blocks[i, j].Location.X &&
+                                           uniqueBallLocation.X <=
+                                           blocks[i, j].Location.X + blocks[i, j].Width)&&(uniqueBallLocation.Y== 
+                                                                                           blocks[i, j].Location.Y +
+                        blocks[i, j].Height))
+                    && uniqueBallLocation.X+UniqueBall.Width>= blocks[i+1, j].Location.X)
+                {
+                    int k = 3000;
+                    blocks[i, j].Top = k;
+                    blocks[i, j].Left = k;
+                    Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                    tSpeed = -(tSpeed + 5);
+                }
+                if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
+                        blocks[i, j].Location.X + blocks[i, j].Width) || (uniqueBallLocation.X + UniqueBall.Width >=
+                                                                          blocks[i, j].Location.X &&
+                                                                          uniqueBallLocation.X <=
+                                                                          blocks[i, j].Location.X + blocks[i, j].Width))
+                    && uniqueBallLocation.X+UniqueBall.Width < blocks[i+1, j].Location.X)
+                {
+                    int k = 3000;
+                    blocks[i, j].Top = k;
+                    blocks[i, j].Left = k;
+                    Controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                    tSpeed = -(tSpeed + 5);
+                }*/
+                }
+            
         }
+            
+        
+        
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -256,7 +459,7 @@ namespace Arkanoid_Game
             if (e.KeyCode == Keys.Space && !reset)
             {
                 flag = false;
-                timer1.Interval = (100);
+                timer1.Interval = (60);
                 timer1.Start();
             }
         }
