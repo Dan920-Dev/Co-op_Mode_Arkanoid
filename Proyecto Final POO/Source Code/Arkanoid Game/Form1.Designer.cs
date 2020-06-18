@@ -34,6 +34,7 @@
             this.UniqueBall = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pbShip = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.UniqueBall)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pbShip)).BeginInit();
             this.SuspendLayout();
@@ -66,12 +67,22 @@
             this.pbShip.TabStop = false;
             this.pbShip.UseWaitCursor = true;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(4, 600);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            this.label1.UseWaitCursor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(574, 433);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbShip);
             this.Controls.Add(this.UniqueBall);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -89,6 +100,7 @@
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbShip;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox UniqueBall;
