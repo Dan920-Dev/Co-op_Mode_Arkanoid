@@ -12,7 +12,7 @@ namespace Arkanoid_Game
 {
     public partial class Form1 : Form
     {
-        public int tSpeed, xSpeed, cont, conta,contra;
+        public int tSpeed, xSpeed, cont, conta, contra;
         public bool flag, reset;
         public PictureBox[,] blocks;
 
@@ -28,7 +28,7 @@ namespace Arkanoid_Game
             setBlock();
             conta = 0;
             contra = 0;
-
+            Ship.livesLeft = 3;
         }
 
         private void setBlock()
@@ -37,10 +37,8 @@ namespace Arkanoid_Game
             int bwidth = 75;
             if (cont == 0)
             {
-
                 blocks = new PictureBox[10, 18];
                 
-
                 for (int i = 0; i < 10; i++)
                 {
                     for (int j = 0; j < 18; j++)
@@ -160,22 +158,11 @@ namespace Arkanoid_Game
                         {
                             blocks[i, j].BackColor = Color.Black;
                         }
-
-
-
-
-
                         this.Controls.Add(blocks[i, j]);
-
                     }
                 }
-
                 cont++;
-
             }
-
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -194,12 +181,21 @@ namespace Arkanoid_Game
 
             if (UniqueBall.Bottom > ClientSize.Height)
             {
+                Ship.livesLeft--;
                 timer1.Enabled = false;
-
                 reset = true;
                 tSpeed = 10;
                 xSpeed = 10;
                 contra++;
+                
+                if (Ship.livesLeft < 0)
+                {
+                   
+                    MessageBox.Show("FIN DEL JUEGO", "ARKANOIDE :v", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+
+                    Close();
+                }
             }
             //golpe arriba
             else if (UniqueBall.Top <= 0)
@@ -240,13 +236,10 @@ namespace Arkanoid_Game
                     tSpeed = -(tSpeed + 5);
 
                 }
-
                 if (xSpeed > 0)
                 {
                     tSpeed = -(tSpeed + 5);
                     xSpeed = -(xSpeed + 5);
-
-
                 }
             }
             else if (((UniqueBall.Bounds.IntersectsWith(pbShip.Bounds) &&
@@ -258,15 +251,11 @@ namespace Arkanoid_Game
                 {
                     tSpeed = -(tSpeed + 5);
                     xSpeed = -(xSpeed + 5);
-
                 }
 
                 if (xSpeed > 0)
                 {
                     tSpeed = -(tSpeed + 5);
-
-
-
                 }
             }
             else if ((UniqueBall.Bounds.IntersectsWith(pbShip.Bounds) && uniqueBallLocation.X +
@@ -295,10 +284,7 @@ namespace Arkanoid_Game
             else if ((uniqueBallLocation.X + (UniqueBall.Width / 2)) == (pbShipLocation.X + (pbShip.Width / 2)) &&
                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))
             {
-
                 tSpeed = -(tSpeed + 5);
-
-
             }
 
 
@@ -306,17 +292,12 @@ namespace Arkanoid_Game
             uniqueBallLocation.X += xSpeed;
 
             UniqueBall.Location = uniqueBallLocation;
-
-
+            
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 18; j++)
                 {
                     int u = 1;
-
-
-
-
 
                     if (j <= 15)
                     {
@@ -333,8 +314,6 @@ namespace Arkanoid_Game
                             conta++;
                             label1.Text = "bloques rotos:" + conta;
                         }
-
-
 
                         if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
                             (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
@@ -386,8 +365,6 @@ namespace Arkanoid_Game
 
                     if (j == 16)
                     {
-
-
                         if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
                              uniqueBallLocation.X + UniqueBall.Width <
                              blocks[i, j + u].Location.X))
@@ -401,9 +378,7 @@ namespace Arkanoid_Game
                             conta++;
                             label1.Text = "bloques rotos:" + conta;
                         }
-
-
-
+                        
                         if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
                             (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
                         {
@@ -450,8 +425,6 @@ namespace Arkanoid_Game
                                 label1.Text = "bloques rotos:" + conta;
                             }
                         }
-
-
                     }
 
                     if (j == 17)
@@ -503,11 +476,6 @@ namespace Arkanoid_Game
                 tSpeed = -(tSpeed + 5);
             }*/
         }
-
-
-
-
-
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
