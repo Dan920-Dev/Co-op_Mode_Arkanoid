@@ -8,5 +8,10 @@ namespace Arkanoid_Game
         {
             InitializeComponent();
         }
+
+        private void blocks_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

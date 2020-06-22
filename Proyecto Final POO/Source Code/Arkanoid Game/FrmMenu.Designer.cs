@@ -37,14 +37,15 @@ namespace Arkanoid_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (128)))), ((int) (((byte) (255)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(657, 456);
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
-            this.Text = "FrmMenu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/.idea.Arkanoid Game/.idea/.idea.Arkanoid Game.iml" filepath="$PROJECT_DIR$/.idea/.idea.Arkanoid Game/.idea/.idea.Arkanoid Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/.idea.Arkanoid Game/riderModule.iml" filepath="$PROJECT_DIR$/.idea/.idea.Arkanoid Game/riderModule.iml" />
     </modules>
   </component>

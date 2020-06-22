@@ -36,10 +36,10 @@ namespace Arkanoid_Game
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnBack.Location = new System.Drawing.Point(20, 16);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(167, 59);
+            this.btnBack.Size = new System.Drawing.Size(135, 59);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Regresar";
             this.btnBack.UseVisualStyleBackColor = true;
