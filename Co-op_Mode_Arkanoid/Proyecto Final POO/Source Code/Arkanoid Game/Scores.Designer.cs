@@ -36,7 +36,7 @@ namespace Arkanoid_Game
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnBack.Location = new System.Drawing.Point(20, 16);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(135, 59);
@@ -49,12 +49,10 @@ namespace Arkanoid_Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Arkanoid_Game.Properties.Resources.Fondo_ARKANOID;
             this.Controls.Add(this.btnBack);
             this.Name = "Scores";
             this.Size = new System.Drawing.Size(528, 413);
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Button btnBack;

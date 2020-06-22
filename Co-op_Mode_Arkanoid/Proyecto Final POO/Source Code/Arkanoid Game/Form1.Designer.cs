@@ -30,8 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pbShip = new System.Windows.Forms.PictureBox();
@@ -49,9 +48,9 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(5, 692);
+            this.label1.Location = new System.Drawing.Point(4, 600);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 27);
+            this.label1.Size = new System.Drawing.Size(109, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bloques rotos: 0";
             this.label1.UseWaitCursor = true;
@@ -60,10 +59,9 @@
             // 
             this.pbShip.BackColor = System.Drawing.Color.Transparent;
             this.pbShip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbShip.Image = global::Arkanoid_Game.Properties.Resources.NaveArkanoid;
-            this.pbShip.Location = new System.Drawing.Point(492, 426);
+            this.pbShip.Location = new System.Drawing.Point(422, 369);
             this.pbShip.Name = "pbShip";
-            this.pbShip.Size = new System.Drawing.Size(114, 28);
+            this.pbShip.Size = new System.Drawing.Size(98, 24);
             this.pbShip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbShip.TabIndex = 1;
             this.pbShip.TabStop = false;
@@ -72,11 +70,10 @@
             // UniqueBall
             // 
             this.UniqueBall.BackColor = System.Drawing.Color.Transparent;
-            this.UniqueBall.BackgroundImage =
-                ((System.Drawing.Image) (resources.GetObject("UniqueBall.BackgroundImage")));
-            this.UniqueBall.Location = new System.Drawing.Point(369, 270);
+            this.UniqueBall.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("UniqueBall.BackgroundImage")));
+            this.UniqueBall.Location = new System.Drawing.Point(316, 234);
             this.UniqueBall.Name = "UniqueBall";
-            this.UniqueBall.Size = new System.Drawing.Size(41, 39);
+            this.UniqueBall.Size = new System.Drawing.Size(35, 34);
             this.UniqueBall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UniqueBall.TabIndex = 0;
             this.UniqueBall.TabStop = false;
@@ -84,31 +81,31 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(846, 378);
+            this.label2.Location = new System.Drawing.Point(725, 328);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Puntaje: 0";
             this.label2.UseWaitCursor = true;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label3.Location = new System.Drawing.Point(386, 163);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label3.Location = new System.Drawing.Point(331, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(451, 67);
+            this.label3.Size = new System.Drawing.Size(387, 58);
             this.label3.TabIndex = 4;
             this.label3.Text = "Press Enter twice";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.UseWaitCursor = true;
             this.label3.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(958, 537);
+            this.ClientSize = new System.Drawing.Size(821, 465);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -130,13 +127,12 @@
         }
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbShip;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox UniqueBall;
 
         #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
     }
 }

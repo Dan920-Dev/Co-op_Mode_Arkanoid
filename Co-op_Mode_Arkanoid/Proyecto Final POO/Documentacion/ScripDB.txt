@@ -1,0 +1,4 @@
+CREATE TABLE PLAYERS(
+	nameplayer VARCHAR(10) PRIMARY KEY,
+	score INT NOT NULL
+);
