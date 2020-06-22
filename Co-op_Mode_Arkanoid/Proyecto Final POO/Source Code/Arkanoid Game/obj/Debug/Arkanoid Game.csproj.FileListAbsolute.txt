@@ -66,3 +66,17 @@ C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.GenerateResource.cache
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.pdb
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe.config
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.pdb
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csprojAssemblyReference.cache
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.blocks.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Form1.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.FrmMenu.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Menu.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Properties.Resources.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Scores.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.GenerateResource.cache
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.pdb
