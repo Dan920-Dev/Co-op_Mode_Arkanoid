@@ -37,8 +37,18 @@
             this.UniqueBall = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbHeart1 = new System.Windows.Forms.PictureBox();
+            this.pbHeart2 = new System.Windows.Forms.PictureBox();
+            this.pbHeart3 = new System.Windows.Forms.PictureBox();
+            this.pbHeart4 = new System.Windows.Forms.PictureBox();
+            this.pbHeart5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.pbShip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.UniqueBall)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart5)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -112,6 +122,66 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.UseWaitCursor = true;
             // 
+            // pbHeart1
+            // 
+            this.pbHeart1.BackColor = System.Drawing.Color.Transparent;
+            this.pbHeart1.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart1.Image")));
+            this.pbHeart1.Location = new System.Drawing.Point(554, 369);
+            this.pbHeart1.Name = "pbHeart1";
+            this.pbHeart1.Size = new System.Drawing.Size(46, 41);
+            this.pbHeart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHeart1.TabIndex = 6;
+            this.pbHeart1.TabStop = false;
+            this.pbHeart1.UseWaitCursor = true;
+            // 
+            // pbHeart2
+            // 
+            this.pbHeart2.BackColor = System.Drawing.Color.Transparent;
+            this.pbHeart2.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart2.Image")));
+            this.pbHeart2.Location = new System.Drawing.Point(620, 369);
+            this.pbHeart2.Name = "pbHeart2";
+            this.pbHeart2.Size = new System.Drawing.Size(46, 41);
+            this.pbHeart2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHeart2.TabIndex = 6;
+            this.pbHeart2.TabStop = false;
+            this.pbHeart2.UseWaitCursor = true;
+            // 
+            // pbHeart3
+            // 
+            this.pbHeart3.BackColor = System.Drawing.Color.Transparent;
+            this.pbHeart3.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart3.Image")));
+            this.pbHeart3.Location = new System.Drawing.Point(696, 369);
+            this.pbHeart3.Name = "pbHeart3";
+            this.pbHeart3.Size = new System.Drawing.Size(46, 41);
+            this.pbHeart3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHeart3.TabIndex = 6;
+            this.pbHeart3.TabStop = false;
+            this.pbHeart3.UseWaitCursor = true;
+            // 
+            // pbHeart4
+            // 
+            this.pbHeart4.BackColor = System.Drawing.Color.Transparent;
+            this.pbHeart4.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart4.Image")));
+            this.pbHeart4.Location = new System.Drawing.Point(748, 369);
+            this.pbHeart4.Name = "pbHeart4";
+            this.pbHeart4.Size = new System.Drawing.Size(46, 41);
+            this.pbHeart4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHeart4.TabIndex = 6;
+            this.pbHeart4.TabStop = false;
+            this.pbHeart4.UseWaitCursor = true;
+            // 
+            // pbHeart5
+            // 
+            this.pbHeart5.BackColor = System.Drawing.Color.Transparent;
+            this.pbHeart5.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart5.Image")));
+            this.pbHeart5.Location = new System.Drawing.Point(343, 369);
+            this.pbHeart5.Name = "pbHeart5";
+            this.pbHeart5.Size = new System.Drawing.Size(46, 41);
+            this.pbHeart5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHeart5.TabIndex = 6;
+            this.pbHeart5.TabStop = false;
+            this.pbHeart5.UseWaitCursor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +190,11 @@
             this.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(821, 465);
+            this.Controls.Add(this.pbHeart5);
+            this.Controls.Add(this.pbHeart4);
+            this.Controls.Add(this.pbHeart3);
+            this.Controls.Add(this.pbHeart2);
+            this.Controls.Add(this.pbHeart1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -138,12 +213,22 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize) (this.pbShip)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.UniqueBall)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pbHeart5)).EndInit();
             this.ResumeLayout(false);
         }
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbHeart1;
+        private System.Windows.Forms.PictureBox pbHeart2;
+        private System.Windows.Forms.PictureBox pbHeart3;
+        private System.Windows.Forms.PictureBox pbHeart4;
+        private System.Windows.Forms.PictureBox pbHeart5;
         private System.Windows.Forms.PictureBox pbShip;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox UniqueBall;

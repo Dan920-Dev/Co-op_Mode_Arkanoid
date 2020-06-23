@@ -23,6 +23,17 @@ namespace Arkanoid_Game
             GameData.flag = true;
             GameData.reset = false;
             timer1.Enabled = false;
+            pbHeart1.Left = 10;
+            pbHeart1.Top = 655;
+            pbHeart2.Left = 55;
+            pbHeart2.Top = 655;
+            pbHeart3.Left = 100;
+            pbHeart3.Top = 655;
+            pbHeart4.Left = 145; 
+            pbHeart4.Top = 655; 
+            pbHeart5.Left = 190; 
+            pbHeart5.Top = 655;
+                        
 
             setBlock();//Seteo bloques
         }
@@ -195,7 +206,23 @@ namespace Arkanoid_Game
                 Close();
             }
 
-            BallBounce();
+            if (Ship.livesLeft == 4)
+            {
+                Controls.Remove(pbHeart5);
+            }
+            if (Ship.livesLeft == 3)
+            {Controls.Remove(pbHeart4);
+            } if (Ship.livesLeft == 2)
+            {Controls.Remove(pbHeart3);
+            }
+            if (Ship.livesLeft == 1)
+            {Controls.Remove(pbHeart2);
+            }
+            if (Ship.livesLeft == 0)
+            {Controls.Remove(pbHeart1);
+            }
+
+        BallBounce();
             
 
             /*if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
