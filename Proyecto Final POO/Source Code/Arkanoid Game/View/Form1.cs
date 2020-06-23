@@ -651,7 +651,7 @@ namespace Arkanoid_Game
             SetScreen();
             
             BackColor = Color.White;
-            label2.Location = new Point(Width - 100, label1.Location.Y);
+            label2.Location = new Point(Width - 200, label1.Location.Y);
             label3.Location = new Point(Width/2 - label3.Width/2 , 492);
         }
         

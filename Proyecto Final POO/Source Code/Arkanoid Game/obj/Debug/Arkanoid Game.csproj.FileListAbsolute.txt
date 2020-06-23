@@ -200,3 +200,4 @@ C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkano
 C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe.config
 C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csproj.CopyComplete
 C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.NewScore.resources
+C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.NewScore.resources

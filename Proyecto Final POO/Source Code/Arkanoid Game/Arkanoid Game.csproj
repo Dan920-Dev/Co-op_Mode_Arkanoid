@@ -94,12 +94,6 @@
     <Compile Include="Model\Ship.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\blocks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\blocks.Designer.cs">
-      <DependentUpon>blocks.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +134,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\blocks.resx">
-      <DependentUpon>blocks.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,7 +167,12 @@
     <None Include="Resources\Fondo ARKANOID.jpg" />
     <None Include="Resources\fondoDelJuego.png" />
     <None Include="Resources\fondonuevonuevo.png" />
+    <Content Include="Resources\Ball.png" />
+    <Content Include="Resources\descarga.png" />
+    <Content Include="Resources\Fondo+ARKANOID.png" />
+    <Content Include="Resources\Heart.png" />
     <Content Include="Resources\NaveArkanoid.png" />
+    <Content Include="Resources\pngwing.com.png" />
     <Content Include="Resources\Tile___black.png" />
     <Content Include="Resources\Tile___blue.png" />
     <Content Include="Resources\Tile___red.png" />
