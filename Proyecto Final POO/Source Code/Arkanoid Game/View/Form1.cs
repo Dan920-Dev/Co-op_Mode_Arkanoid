@@ -20,6 +20,7 @@ namespace Arkanoid_Game
             GameData.conta = 0;
             GameData.contra = 0;
             Ship.livesLeft = 5;
+            GameData.score = 0;
             GameData.flag = true;
             GameData.reset = false;
             timer1.Enabled = false;
@@ -33,8 +34,7 @@ namespace Arkanoid_Game
             pbHeart4.Top = 655; 
             pbHeart5.Left = 190; 
             pbHeart5.Top = 655;
-                        
-
+            
             setBlock();//Seteo bloques
         }
 
@@ -76,7 +76,6 @@ namespace Arkanoid_Game
                         if (i == 2 && (j == 7 || j == 11))
                         {
                             blocks[i, j].BackColor = Color.Green;
-
                         }
 
                         if (i == 2 && ((j >= 0 && j < 7) || (j > 7 && j < 11) || (j > 11 && j <= 17)))
@@ -207,61 +206,25 @@ namespace Arkanoid_Game
             }
 
             if (Ship.livesLeft == 4)
-            {
                 Controls.Remove(pbHeart5);
-            }
             if (Ship.livesLeft == 3)
-            {Controls.Remove(pbHeart4);
-            } if (Ship.livesLeft == 2)
-            {Controls.Remove(pbHeart3);
-            }
+                Controls.Remove(pbHeart4);
+            if (Ship.livesLeft == 2)
+                Controls.Remove(pbHeart3);
             if (Ship.livesLeft == 1)
-            {Controls.Remove(pbHeart2);
-            }
+                Controls.Remove(pbHeart2);
             if (Ship.livesLeft == 0)
-            {Controls.Remove(pbHeart1);
-            }
+                Controls.Remove(pbHeart1);
 
-        BallBounce();
-            
-
-            /*if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
-                blocks[i, j].Location.X + blocks[i, j].Width) && (uniqueBallLocation.Y==blocks[i, j].Location.Y +
-                    blocks[i, j].Height )|| (uniqueBallLocation.X + UniqueBall.Width >=
-                                       blocks[i, j].Location.X &&
-                                       uniqueBallLocation.X <=
-                                       blocks[i, j].Location.X + blocks[i, j].Width)&&(uniqueBallLocation.Y== 
-                                                                                       blocks[i, j].Location.Y +
-                    blocks[i, j].Height))
-                && uniqueBallLocation.X+UniqueBall.Width>= blocks[i+1, j].Location.X)
-            {
-                int k = 3000;
-                blocks[i, j].Top = k;
-                blocks[i, j].Left = k;
-                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
-                GameData.ySpeed = -(GameData.ySpeed + 5);
-            }
-            if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
-                    blocks[i, j].Location.X + blocks[i, j].Width) || (uniqueBallLocation.X + UniqueBall.Width >=
-                                                                      blocks[i, j].Location.X &&
-                                                                      uniqueBallLocation.X <=
-                                                                      blocks[i, j].Location.X + blocks[i, j].Width))
-                && uniqueBallLocation.X+UniqueBall.Width < blocks[i+1, j].Location.X)
-            {
-                int k = 3000;
-                blocks[i, j].Top = k;
-                blocks[i, j].Left = k;
-                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
-                GameData.ySpeed = -(GameData.ySpeed + 5);
-            }*/
+            BallBounce();//Rebote de la bola
         }
 
         private void BallBounce()
         {
-            var uniqueBallLocation = UniqueBall.Location;
+            var pbUniqueBallLocation = pbUniqueBall.Location;
             var pbShipLocation = pbShip.Location;
             
-            if (UniqueBall.Bottom > ClientSize.Height)
+            if (pbUniqueBall.Bottom > ClientSize.Height)
             {
                 Ship.livesLeft--;
                 timer1.Enabled = false;
@@ -281,43 +244,32 @@ namespace Arkanoid_Game
                 label3.Visible = true;
             }
             //golpe arriba
-            else if (UniqueBall.Top <= 0)
+            else if (pbUniqueBall.Top <= 0)
             {
                 GameData.ySpeed = -(GameData.ySpeed + 5);
-            } //golpe de la bola izquierda 
-            else if (uniqueBallLocation.X <= 0)
+            } 
+            //golpe de la bola izquierda 
+            else if (pbUniqueBallLocation.X <= 0)
             {
-                uniqueBallLocation.X = 1;
+                pbUniqueBallLocation.X = 1;//Sin esto la bola queda atrapada en la orilla y desaparece
                 GameData.xSpeed = -(GameData.xSpeed + 5);
             }
             //golpe de la bola  a la derecha
-            else if (uniqueBallLocation.X + UniqueBall.Width >= ClientSize.Width)
+            else if (pbUniqueBallLocation.X + pbUniqueBall.Width >= ClientSize.Width)
             {
                 GameData.xSpeed = -(GameData.xSpeed + 5);
             }
-            /*else if (((uniqueBallLocation.X >= pbShipLocation.X &&
-                       uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width) &&
-                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)) || (uniqueBallLocation.X +
-                                                                                      UniqueBall.Width >=
-                                                                                      pbShipLocation.X &&
-                                                                                      uniqueBallLocation.X +
-                                                                                      UniqueBall.Width <=
-                                                                                      pbShipLocation.X + pbShip.Width
-                ) && uniqueBallLocation.Y >=
-                (pbShipLocation.Y - pbShip.Height))
-            {
-                GameData.ySpeed = -(GameData.ySpeed + 5);
-            }*/
 
-            else if (((UniqueBall.Bounds.IntersectsWith(pbShip.Bounds) && uniqueBallLocation.X >= pbShipLocation.X &&
-                       uniqueBallLocation.X + (UniqueBall.Width / 2) < pbShipLocation.X + (pbShip.Width / 2)) &&
-                      UniqueBall.Location.X < pbShipLocation.X + (pbShip.Width / 2) &&
-                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)))
+            else if (((pbUniqueBall.Bounds.IntersectsWith(pbShip.Bounds) && pbUniqueBallLocation.X >= pbShipLocation.X &&
+                       pbUniqueBallLocation.X + (pbUniqueBall.Width / 2) < pbShipLocation.X + (pbShip.Width / 2)) &&
+                      pbUniqueBall.Location.X < pbShipLocation.X + (pbShip.Width / 2) &&
+                      pbUniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)))
             {
+                pbUniqueBallLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;//Instrucción extra para que
+                                                                                //la bola no quede atrapada en la pb de la nave
                 if (GameData.xSpeed < 0)
                 {
                     GameData.ySpeed = -(GameData.ySpeed + 5);
-
                 }
                 if (GameData.xSpeed > 0)
                 {
@@ -325,11 +277,13 @@ namespace Arkanoid_Game
                     GameData.xSpeed = -(GameData.xSpeed + 5);
                 }
             }
-            else if (((UniqueBall.Bounds.IntersectsWith(pbShip.Bounds) &&
-                       uniqueBallLocation.X + (UniqueBall.Width / 2) > pbShipLocation.X + (pbShip.Width / 2) &&
-                       uniqueBallLocation.X <= pbShipLocation.X + pbShip.Width + 1) &&
-                      uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)))
+            else if (((pbUniqueBall.Bounds.IntersectsWith(pbShip.Bounds) &&
+                       pbUniqueBallLocation.X + (pbUniqueBall.Width / 2) > pbShipLocation.X + (pbShip.Width / 2) &&
+                       pbUniqueBallLocation.X <= pbShipLocation.X + pbShip.Width + 1) &&
+                      pbUniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height)))
             {
+                pbUniqueBallLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;
+                
                 if (GameData.xSpeed < 0)
                 {
                     GameData.ySpeed = -(GameData.ySpeed + 5);
@@ -341,40 +295,40 @@ namespace Arkanoid_Game
                     GameData.ySpeed = -(GameData.ySpeed + 5);
                 }
             }
-            else if ((UniqueBall.Bounds.IntersectsWith(pbShip.Bounds) && uniqueBallLocation.X +
-                      UniqueBall.Width >=
+            else if ((pbUniqueBall.Bounds.IntersectsWith(pbShip.Bounds) && pbUniqueBallLocation.X +
+                      pbUniqueBall.Width >=
                       pbShipLocation.X &&
-                      uniqueBallLocation.X +
-                      UniqueBall.Width <=
-                      pbShipLocation.X + (pbShip.Width / 2) && uniqueBallLocation.X < pbShipLocation.X
-                ) && uniqueBallLocation.Y >=
+                      pbUniqueBallLocation.X +
+                      pbUniqueBall.Width <=
+                      pbShipLocation.X + (pbShip.Width / 2) && pbUniqueBallLocation.X < pbShipLocation.X
+                ) && pbUniqueBallLocation.Y >=
                 (pbShipLocation.Y - pbShip.Height))
             {
+                pbUniqueBallLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;
+                
                 if (GameData.xSpeed < 0)
                 {
                     GameData.ySpeed = -(GameData.ySpeed + 5);
-
                 }
 
                 if (GameData.xSpeed > 0)
                 {
                     GameData.ySpeed = -(GameData.ySpeed + 5);
                     GameData.xSpeed = -(GameData.xSpeed + 5);
-
-
                 }
-            } //validacion extra
-            else if ((uniqueBallLocation.X + (UniqueBall.Width / 2)) == (pbShipLocation.X + (pbShip.Width / 2)) &&
-                     uniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))
+            } 
+            //validacion extra
+            else if ((pbUniqueBallLocation.X + (pbUniqueBall.Width / 2)) == (pbShipLocation.X + (pbShip.Width / 2)) &&
+                     pbUniqueBallLocation.Y >= (pbShipLocation.Y - pbShip.Height))
             {
+                pbUniqueBallLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;
                 GameData.ySpeed = -(GameData.ySpeed + 5);
             }
+            
+            pbUniqueBallLocation.Y -= GameData.ySpeed;
+            pbUniqueBallLocation.X += GameData.xSpeed;
 
-
-            uniqueBallLocation.Y -= GameData.ySpeed;
-            uniqueBallLocation.X += GameData.xSpeed;
-
-            UniqueBall.Location = uniqueBallLocation;
+            pbUniqueBall.Location = pbUniqueBallLocation;
             int k = 30000;
             for (int i = 0; i < 10; i++)
             {
@@ -384,8 +338,8 @@ namespace Arkanoid_Game
 
                     if (j <= 15)
                     {
-                        if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
-                             uniqueBallLocation.X + UniqueBall.Width <
+                        if ((pbUniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                             pbUniqueBallLocation.X + pbUniqueBall.Width <
                              blocks[i, j + u].Location.X))
                         {
                             blocks[i, j].hitsRemaining--;
@@ -411,10 +365,10 @@ namespace Arkanoid_Game
                             GameData.ySpeed = -(GameData.ySpeed + 5);
                         }
 
-                        if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
-                            (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
+                        if (pbUniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                            (pbUniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
                         {
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0)
@@ -439,7 +393,7 @@ namespace Arkanoid_Game
                                 GameData.ySpeed = -(GameData.ySpeed + 5);
                             }
 
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0)
@@ -464,7 +418,7 @@ namespace Arkanoid_Game
                                 GameData.ySpeed = -(GameData.ySpeed + 5);
                             }
 
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0)
@@ -493,8 +447,8 @@ namespace Arkanoid_Game
 
                     if (j == 16)
                     {
-                        if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
-                             uniqueBallLocation.X + UniqueBall.Width <
+                        if ((pbUniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                             pbUniqueBallLocation.X + pbUniqueBall.Width <
                              blocks[i, j + u].Location.X))
                         {
                             blocks[i, j].hitsRemaining--;
@@ -520,10 +474,10 @@ namespace Arkanoid_Game
                             GameData.ySpeed = -(GameData.ySpeed + 5);
                         }
                         
-                        if (UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
-                            (UniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
+                        if (pbUniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                            (pbUniqueBall.Bounds.IntersectsWith(blocks[i, j + u].Bounds)))
                         {
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) < blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0)
@@ -548,7 +502,7 @@ namespace Arkanoid_Game
                                 GameData.ySpeed = -(GameData.ySpeed + 5);
                             }
 
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) > blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0)
@@ -573,7 +527,7 @@ namespace Arkanoid_Game
                                 GameData.ySpeed = -(GameData.ySpeed + 5);
                             }
 
-                            if (UniqueBall.Location.X + (UniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
+                            if (pbUniqueBall.Location.X + (pbUniqueBall.Width / 2) == blocks[i, j + 1].Location.X)
                             {
                                 blocks[i, j].hitsRemaining--;
                                 if (blocks[i, j].hitsRemaining <= 0){
@@ -601,8 +555,8 @@ namespace Arkanoid_Game
 
                     if (j == 17)
                     {
-                        if ((UniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
-                             uniqueBallLocation.X >= blocks[i, j].Location.X
+                        if ((pbUniqueBall.Bounds.IntersectsWith(blocks[i, j].Bounds) &&
+                             pbUniqueBallLocation.X >= blocks[i, j].Location.X
                             ))
                         {
                             blocks[i, j].hitsRemaining--;
@@ -635,7 +589,7 @@ namespace Arkanoid_Game
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             var pbShipLocation = pbShip.Location;
-            var ballLocation = UniqueBall.Location;
+            var ballLocation = pbUniqueBall.Location;
             
             #region Movimiento nave
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
@@ -661,15 +615,15 @@ namespace Arkanoid_Game
                 GameData.flag = true;
                 label3.Visible = false;
 
-                ballLocation.Y = pbShipLocation.Y - UniqueBall.Height;
+                ballLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;//Sin esto la bola no regresa a la altura original
                 
                 SetScreen();
             }
 
             if (GameData.flag)//Para que la bola permanezca sobre la nave mientras se mueva antes de lanzarla
             {
-                ballLocation.X = pbShipLocation.X + pbShip.Width / 2 - UniqueBall.Width / 2;
-                UniqueBall.Location = ballLocation;
+                ballLocation.X = pbShipLocation.X + pbShip.Width / 2 - pbUniqueBall.Width / 2;
+                pbUniqueBall.Location = ballLocation;
             }
         }
 
@@ -704,10 +658,10 @@ namespace Arkanoid_Game
             pbShipLocation.X = Width / 2 - pbShip.Width / 2;
             pbShipLocation.Y = Height - 150;
             pbShip.Location = pbShipLocation;
-            var uniqueBallLocation = UniqueBall.Location;
-            uniqueBallLocation.X = Width / 2 - UniqueBall.Width / 2;
-            uniqueBallLocation.Y = pbShipLocation.Y - UniqueBall.Height;
-            UniqueBall.Location = uniqueBallLocation;
+            var pbUniqueBallLocation = pbUniqueBall.Location;
+            pbUniqueBallLocation.X = Width / 2 - pbUniqueBall.Width / 2;
+            pbUniqueBallLocation.Y = pbShipLocation.Y - pbUniqueBall.Height;
+            pbUniqueBall.Location = pbUniqueBallLocation;
         }
     }
 }

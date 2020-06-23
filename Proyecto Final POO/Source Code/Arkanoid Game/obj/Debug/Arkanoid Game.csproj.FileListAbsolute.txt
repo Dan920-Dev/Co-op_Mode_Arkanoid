@@ -52,7 +52,6 @@ C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Fi
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Menu.resources
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Scores.resources
 C:\Users\julio\Desktop\universidad\POO\POO FINAL\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.blocks.resources
-C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.blocks.resources
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe.config
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.exe
 C:\Users\rafae\OneDrive\Escritorio\Ciclo 01 2020\Materia Poo\Proyecto Finale POO\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\bin\Debug\Arkanoid_Game.pdb
