@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Controller\ConnectionDB.cs" />
     <Compile Include="Controller\GameData.cs" />
+    <Compile Include="Controller\ScoreDAO.cs" />
     <Compile Include="Model\BlockClass.cs" />
     <Compile Include="Model\Ship.cs" />
     <Compile Include="Program.cs" />

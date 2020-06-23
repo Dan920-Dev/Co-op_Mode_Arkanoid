@@ -166,7 +166,6 @@ C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkan
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid Game.csprojAssemblyReference.cache
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.exe.config
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Properties.Resources.resources
-C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.blocks.resources
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Form1.resources
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.FrmMenu.resources
 C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game\obj\Debug\Arkanoid_Game.Menu.resources

@@ -11,6 +11,7 @@
       <e p="Controller" t="Include">
         <e p="ConnectionDB.cs" t="Include" />
         <e p="GameData.cs" t="Include" />
+        <e p="ScoreDAO.cs" t="Include" />
       </e>
       <e p="Model" t="Include">
         <e p="BlockClass.cs" t="Include" />
