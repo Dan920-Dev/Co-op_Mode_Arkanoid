@@ -172,6 +172,7 @@
     <Content Include="Resources\descarga.png" />
     <Content Include="Resources\Fondo+ARKANOID.png" />
     <Content Include="Resources\Heart.png" />
+    <Content Include="Resources\Heart1.png" />
     <Content Include="Resources\NaveArkanoid.png" />
     <Content Include="Resources\pngwing.com.png" />
     <Content Include="Resources\Tile___black.png" />

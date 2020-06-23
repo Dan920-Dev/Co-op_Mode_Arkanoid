@@ -125,7 +125,7 @@
             // pbHeart1
             // 
             this.pbHeart1.BackColor = System.Drawing.Color.Transparent;
-            this.pbHeart1.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart1.Image")));
+            this.pbHeart1.Image = global::Arkanoid_Game.Properties.Resources.Heart;
             this.pbHeart1.Location = new System.Drawing.Point(554, 369);
             this.pbHeart1.Name = "pbHeart1";
             this.pbHeart1.Size = new System.Drawing.Size(46, 41);
@@ -137,7 +137,7 @@
             // pbHeart2
             // 
             this.pbHeart2.BackColor = System.Drawing.Color.Transparent;
-            this.pbHeart2.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart2.Image")));
+            this.pbHeart2.Image = global::Arkanoid_Game.Properties.Resources.Heart;
             this.pbHeart2.Location = new System.Drawing.Point(620, 369);
             this.pbHeart2.Name = "pbHeart2";
             this.pbHeart2.Size = new System.Drawing.Size(46, 41);
@@ -149,7 +149,7 @@
             // pbHeart3
             // 
             this.pbHeart3.BackColor = System.Drawing.Color.Transparent;
-            this.pbHeart3.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart3.Image")));
+            this.pbHeart3.Image = global::Arkanoid_Game.Properties.Resources.Heart;
             this.pbHeart3.Location = new System.Drawing.Point(696, 369);
             this.pbHeart3.Name = "pbHeart3";
             this.pbHeart3.Size = new System.Drawing.Size(46, 41);
@@ -161,7 +161,7 @@
             // pbHeart4
             // 
             this.pbHeart4.BackColor = System.Drawing.Color.Transparent;
-            this.pbHeart4.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart4.Image")));
+            this.pbHeart4.Image = global::Arkanoid_Game.Properties.Resources.Heart;
             this.pbHeart4.Location = new System.Drawing.Point(748, 369);
             this.pbHeart4.Name = "pbHeart4";
             this.pbHeart4.Size = new System.Drawing.Size(46, 41);
@@ -173,7 +173,7 @@
             // pbHeart5
             // 
             this.pbHeart5.BackColor = System.Drawing.Color.Transparent;
-            this.pbHeart5.Image = ((System.Drawing.Image) (resources.GetObject("pbHeart5.Image")));
+            this.pbHeart5.Image = global::Arkanoid_Game.Properties.Resources.Heart;
             this.pbHeart5.Location = new System.Drawing.Point(343, 369);
             this.pbHeart5.Name = "pbHeart5";
             this.pbHeart5.Size = new System.Drawing.Size(46, 41);
