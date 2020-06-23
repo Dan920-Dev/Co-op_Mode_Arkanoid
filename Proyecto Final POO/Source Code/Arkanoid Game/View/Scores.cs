@@ -13,8 +13,7 @@ namespace Arkanoid_Game
         {
             InitializeComponent();
         }
-
-
+        
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (ScoresButtonCLick != null)

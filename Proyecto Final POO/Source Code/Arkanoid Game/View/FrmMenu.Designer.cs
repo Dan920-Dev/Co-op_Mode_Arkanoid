@@ -35,17 +35,17 @@ namespace Arkanoid_Game
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(657, 456);
+            this.BackgroundImage = global::Arkanoid_Game.Properties.Resources.Fondo_ARKANOID;
+            this.ClientSize = new System.Drawing.Size(766, 526);
             this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion

@@ -7,12 +7,17 @@ namespace Arkanoid_Game
     {
         private Menu mainMenu;
         private Scores topScores;
-        public FrmMenu()
+        private NewScore NS;
+
+        private int MyScore;
+        public FrmMenu(int Score)
         {
             InitializeComponent();
+            MyScore = Score;
             WindowState = FormWindowState.Maximized;
             mainMenu = new Menu();
             topScores = new Scores();
+            NS = new NewScore(MyScore);
         }
 
         private void OnClickToMenuUS(object sender, EventArgs e)
@@ -24,6 +29,12 @@ namespace Arkanoid_Game
         private void OnClickToScoresUS(object sender, EventArgs e)
         {
             topScores.Hide();
+            mainMenu.Show();
+        }
+        
+        private void NewScoreUsButtonClick(object sender, EventArgs e)
+        {
+            NS.Hide();
             mainMenu.Show();
         }
 
@@ -39,6 +50,13 @@ namespace Arkanoid_Game
             Application.Exit();
         }
 
+        private void RegisterScore()
+        {
+            mainMenu.Hide();
+            topScores.Hide();
+            NS.Show();
+        }
+
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             #region Configurando User Controls
@@ -50,8 +68,13 @@ namespace Arkanoid_Game
             topScores.Width = ClientSize.Width;
             topScores.Height = ClientSize.Height;
             
+            NS.Dock = DockStyle.Fill;
+            NS.Width = ClientSize.Width;
+            NS.Height = ClientSize.Height;
+
             Controls.Add(mainMenu);
             Controls.Add(topScores);
+            Controls.Add(NS);
             #endregion
 
             //Agregando Events
@@ -59,6 +82,10 @@ namespace Arkanoid_Game
             mainMenu.ShowScoresClick += OnClickToMenuUS;
             mainMenu.ExitGameClick += ExitGame;
             topScores.ScoresButtonCLick += OnClickToScoresUS;
+            NS.NSButtonCLick += NewScoreUsButtonClick;
+            
+            if (MyScore > 0)
+                RegisterScore();
         }
     }
 }

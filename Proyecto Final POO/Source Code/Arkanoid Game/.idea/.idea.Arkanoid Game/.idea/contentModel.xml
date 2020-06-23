@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Daniel\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Daniel\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Arkanoid Game.572183135.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game" t="IncludeRecursive">
+    <e p="C:\Users\denny\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\denny\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Arkanoid Game.1337265362.00" t="ExcludeRecursive" />
+    <e p="C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="Arkanoid Game.csproj" t="IncludeRecursive" />
       <e p="Arkanoid Game.sln" t="IncludeFlat" />
@@ -50,6 +50,9 @@
         <e p="Menu.cs" t="Include" />
         <e p="Menu.Designer.cs" t="Include" />
         <e p="Menu.resx" t="Include" />
+        <e p="NewScore.cs" t="Include" />
+        <e p="NewScore.Designer.cs" t="Include" />
+        <e p="NewScore.resx" t="Include" />
         <e p="Scores.cs" t="Include" />
         <e p="Scores.Designer.cs" t="Include" />
         <e p="Scores.resx" t="Include" />

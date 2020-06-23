@@ -32,10 +32,5 @@ namespace Arkanoid_Game
             if (ExitGameClick != null)
                 ExitGameClick(this, e);
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

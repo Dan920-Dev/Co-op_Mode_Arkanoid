@@ -7,6 +7,7 @@ namespace Arkanoid_Game
     public partial class Form1 : Form
     {
         public BlockClass[,] blocks;
+        private NewScore NS;
 
         public Form1()
         {
@@ -18,11 +19,11 @@ namespace Arkanoid_Game
             GameData.cont = 0;
             GameData.conta = 0;
             GameData.contra = 0;
-            Ship.livesLeft = 4;
+            Ship.livesLeft = 5;
             GameData.flag = true;
             GameData.reset = false;
             timer1.Enabled = false;
-            
+
             setBlock();//Seteo bloques
         }
 
@@ -30,6 +31,7 @@ namespace Arkanoid_Game
         {
             int bheight = 35;
             int bwidth = 75;
+            
             if (GameData.cont == 0)
             {
                 blocks = new BlockClass[10, 18];
@@ -183,18 +185,55 @@ namespace Arkanoid_Game
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (GameData.conta == 180)
+            {
+                GameData.score = GameData.score * Ship.livesLeft;
+                timer1.Enabled = false;
+                MessageBox.Show("¡FELICIDADES JUGADOR, HAS GANADO!\nPuntaje final: " + GameData.score,
+                    "ARKANOIDE :v", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                Close();
+            }
+
+            BallBounce();
+            
+
+            /*if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
+                blocks[i, j].Location.X + blocks[i, j].Width) && (uniqueBallLocation.Y==blocks[i, j].Location.Y +
+                    blocks[i, j].Height )|| (uniqueBallLocation.X + UniqueBall.Width >=
+                                       blocks[i, j].Location.X &&
+                                       uniqueBallLocation.X <=
+                                       blocks[i, j].Location.X + blocks[i, j].Width)&&(uniqueBallLocation.Y== 
+                                                                                       blocks[i, j].Location.Y +
+                    blocks[i, j].Height))
+                && uniqueBallLocation.X+UniqueBall.Width>= blocks[i+1, j].Location.X)
+            {
+                int k = 3000;
+                blocks[i, j].Top = k;
+                blocks[i, j].Left = k;
+                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                GameData.ySpeed = -(GameData.ySpeed + 5);
+            }
+            if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
+                    blocks[i, j].Location.X + blocks[i, j].Width) || (uniqueBallLocation.X + UniqueBall.Width >=
+                                                                      blocks[i, j].Location.X &&
+                                                                      uniqueBallLocation.X <=
+                                                                      blocks[i, j].Location.X + blocks[i, j].Width))
+                && uniqueBallLocation.X+UniqueBall.Width < blocks[i+1, j].Location.X)
+            {
+                int k = 3000;
+                blocks[i, j].Top = k;
+                blocks[i, j].Left = k;
+                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
+                GameData.ySpeed = -(GameData.ySpeed + 5);
+            }*/
+        }
+
+        private void BallBounce()
+        {
             var uniqueBallLocation = UniqueBall.Location;
             var pbShipLocation = pbShip.Location;
             
-            if (GameData.conta == 180)
-            {
-                timer1.Enabled = false;
-                MessageBox.Show("¡FELICIDADES JUGADOR, HAS GANADO!\nPuntaje final: " + (GameData.score*Ship.livesLeft),
-                    "ARKANOIDE :v", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            this.Close();
-            }
-
             if (UniqueBall.Bottom > ClientSize.Height)
             {
                 Ship.livesLeft--;
@@ -206,7 +245,6 @@ namespace Arkanoid_Game
 
                 if (Ship.livesLeft < 0)
                 {
-                   
                     MessageBox.Show("FIN DEL JUEGO\nPuntaje final: " + GameData.score, "ARKANOIDE :v", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
 
@@ -565,36 +603,6 @@ namespace Arkanoid_Game
                     }
                 }
             }
-
-            /*if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
-                blocks[i, j].Location.X + blocks[i, j].Width) && (uniqueBallLocation.Y==blocks[i, j].Location.Y +
-                    blocks[i, j].Height )|| (uniqueBallLocation.X + UniqueBall.Width >=
-                                       blocks[i, j].Location.X &&
-                                       uniqueBallLocation.X <=
-                                       blocks[i, j].Location.X + blocks[i, j].Width)&&(uniqueBallLocation.Y== 
-                                                                                       blocks[i, j].Location.Y +
-                    blocks[i, j].Height))
-                && uniqueBallLocation.X+UniqueBall.Width>= blocks[i+1, j].Location.X)
-            {
-                int k = 3000;
-                blocks[i, j].Top = k;
-                blocks[i, j].Left = k;
-                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
-                GameData.ySpeed = -(GameData.ySpeed + 5);
-            }
-            if (((uniqueBallLocation.X >= blocks[i, j].Location.X && uniqueBallLocation.X <=
-                    blocks[i, j].Location.X + blocks[i, j].Width) || (uniqueBallLocation.X + UniqueBall.Width >=
-                                                                      blocks[i, j].Location.X &&
-                                                                      uniqueBallLocation.X <=
-                                                                      blocks[i, j].Location.X + blocks[i, j].Width))
-                && uniqueBallLocation.X+UniqueBall.Width < blocks[i+1, j].Location.X)
-            {
-                int k = 3000;
-                blocks[i, j].Top = k;
-                blocks[i, j].Left = k;
-                GameData.controls.Remove(blocks[i, j]); //blocks[i,j]=null;
-                GameData.ySpeed = -(GameData.ySpeed + 5);
-            }*/
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -607,14 +615,14 @@ namespace Arkanoid_Game
             {
                 if (pbShipLocation.X <= 5) { }
                 else
-                    pbShipLocation.X -= 10;
+                    pbShipLocation.X -= 20;
             }
             
             else if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 if (pbShipLocation.X + pbShip.Width > ClientSize.Width) { }
                 else
-                    pbShipLocation.X += 10;
+                    pbShipLocation.X += 20;
             }
 
             pbShip.Location = pbShipLocation;
@@ -652,14 +660,14 @@ namespace Arkanoid_Game
             if (e.KeyCode == Keys.Space && !GameData.reset)//Para que la bola se lanze desde la posición de la nave
             {                                              //Sino, se lanza desde la posición donde cayó
                 GameData.flag = false;
-                timer1.Interval = (60);
+                timer1.Interval = (50);
                 timer1.Start();
             }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form window = new FrmMenu();
+            Form window = new FrmMenu(GameData.score);
             window.Show();
         }
 

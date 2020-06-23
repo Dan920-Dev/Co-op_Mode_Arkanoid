@@ -118,6 +118,12 @@
     <Compile Include="View\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\NewScore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NewScore.Designer.cs">
+      <DependentUpon>NewScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Scores.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NewScore.resx">
+      <DependentUpon>NewScore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Scores.resx">
       <DependentUpon>Scores.cs</DependentUpon>
