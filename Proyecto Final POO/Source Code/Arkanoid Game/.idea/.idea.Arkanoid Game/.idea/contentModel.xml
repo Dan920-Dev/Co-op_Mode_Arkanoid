@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\denny\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\denny\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_Arkanoid Game.1337265362.00" t="ExcludeRecursive" />
-    <e p="C:\Users\denny\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game" t="IncludeRecursive">
+    <e p="C:\Users\Daniel\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Daniel\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Arkanoid Game.572183135.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Daniel\Desktop\Co-op_Mode_Arkanoid\Proyecto Final POO\Source Code\Arkanoid Game" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="Arkanoid Game.csproj" t="IncludeRecursive" />
       <e p="Arkanoid Game.sln" t="IncludeFlat" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controller" t="Include">
         <e p="ConnectionDB.cs" t="Include" />
+        <e p="FieldIsEmptyException.cs" t="Include" />
+        <e p="finishGameException.cs" t="Include" />
         <e p="GameData.cs" t="Include" />
+        <e p="GetDataException.cs" t="Include" />
         <e p="ScoreDAO.cs" t="Include" />
+        <e p="ScoreisEmptyException.cs" t="Include" />
+        <e p="UserExistsException.cs" t="Include" />
       </e>
       <e p="Model" t="Include">
         <e p="BlockClass.cs" t="Include" />

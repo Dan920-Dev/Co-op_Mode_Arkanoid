@@ -18,13 +18,39 @@ namespace Arkanoid_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (NSButtonCLick != null)
+            try
             {
-                ConnectionDB.ExecuteNonQuery($"INSERT INTO PLAYERS(nameplayer, score) VALUES(" +
-                                             $"'{richTextBox1.Text}'," +
-                                             $"{Convert.ToInt32(lblScore.Text)})");
-                NSButtonCLick(this, e);
+                richTextBox1.Text = richTextBox1.Text.Trim();
+                if (richTextBox1.Text.Equals(""))
+                {
+                    throw new FieldIsEmptyException("Error: Campo vacio, registre su nickname");
+                }
+
+                if (lblScore.Text.Equals(""))
+                {
+                    throw new ScoreisEmptyException("Error: No se han registrado puntajes");
+                }
+                else
+                {
+                    if (NSButtonCLick != null)
+                    {
+                        ConnectionDB.ExecuteNonQuery($"INSERT INTO PLAYERS(nameplayer, score) VALUES(" +
+                                                                         $"'{richTextBox1.Text}'," +
+                                                                         $"{Convert.ToInt32(lblScore.Text)})");
+                        NSButtonCLick(this, e);
+                    }
+                    
+                }
             }
+            catch (FieldIsEmptyException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (ScoreisEmptyException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

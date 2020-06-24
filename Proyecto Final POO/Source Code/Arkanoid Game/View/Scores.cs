@@ -29,12 +29,27 @@ namespace Arkanoid_Game
         {
             var listPlayer = ScoreDAO.GetBestPlayers();
             var listScore = ScoreDAO.GetBestScores();
-
-            for (int i = 0; i < listPlayer.Count; i++)
+            try
             {
-                lblBestP.Text += $"{i + 1} " + listPlayer[i] + "\n";
-                lblScores.Text += $"{i + 1}" + listScore[i] + "\n";
+                if (listScore.Count.Equals(0))
+                {
+                    throw new ScoreisEmptyException("La Lista de puntajes esta vacia");
+                }
+                else
+                {
+                  for (int i = 0; i < listPlayer.Count; i++)
+                  {
+                      lblBestP.Text += $"{i + 1} " + listPlayer[i] + "\n";
+                      lblScores.Text += $"{i + 1}" + listScore[i] + "\n";
+                    }  
+                }
             }
+            catch (ScoreisEmptyException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            
         }
     }
 }

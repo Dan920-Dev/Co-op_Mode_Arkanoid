@@ -232,13 +232,13 @@ namespace Arkanoid_Game
                 GameData.ySpeed = 10;
                 GameData.xSpeed = 10;
                 GameData.contra++;
-
+                
                 if (Ship.livesLeft < 0)
                 {
                     MessageBox.Show("FIN DEL JUEGO\nPuntaje final: " + GameData.score, "ARKANOIDE :v", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
 
-                    Close();
+                    
                 }
                 
                 label3.Visible = true;
